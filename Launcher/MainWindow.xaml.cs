@@ -1455,8 +1455,8 @@ namespace ToolkitLauncher
                "Select any source image file to choose folder",
                "Supported image files|" + bitmap_file_types,
                FilePicker.Options.PathRoot.Data,
-               parent: bitmap_folder_radiobutton.IsChecked == true,
-               strip_extension: bitmap_folder_radiobutton.IsChecked == true && (toolkit is H1AToolkit || toolkit is H1Toolkit)
+               parent: bitmap_folder_radiobutton.IsChecked == true || (toolkit is H2Toolkit || toolkit is H4Toolkit || toolkit is H2AToolkit),
+               strip_extension: bitmap_folder_radiobutton.IsChecked == true || (toolkit is H1AToolkit || toolkit is H1Toolkit)
             );
 
             bool tag_dir = false;
@@ -1550,6 +1550,8 @@ namespace ToolkitLauncher
         {
             light_quality_level.SelectedIndex = 0;
             class_dropdown.SelectedIndex = 0;
+            bitmap_folder_radiobutton.IsChecked = true;
+            bitmap_single_radiobutton.IsChecked = false;
         }
 
         private void string_SelectionChanged(object sender, SelectionChangedEventArgs e)

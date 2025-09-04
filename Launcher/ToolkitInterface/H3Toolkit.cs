@@ -29,7 +29,7 @@ namespace ToolkitLauncher.ToolkitInterface
 
 
             // Import bitmaps - run this regardless of managedblam success
-            await RunTool(ToolType.Tool, new() { import_folder ? debug_plate ? "bitmaps-debug" : "bitmaps" : "bitmaps_single", path });
+            await RunTool(ToolType.Tool, new() { import_folder ? debug_plate ? "bitmaps-debug" : "bitmaps" : "bitmap_single", path });
         }
 
         override public async Task ImportUnicodeStrings(string path)
